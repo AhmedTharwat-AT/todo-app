@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* Light Theme */
+
+  --light-gray-100: hsl(0, 0%, 98%);
+  --light-gray-200: hsl(236, 33%, 92%);
+  --light-gray-300: hsl(233, 11%, 84%);
+  --light-gray-400: hsl(236, 9%, 61%);
+  --light-gray-500: hsl(235, 19%, 35%);
+
+  /* Dark them */
+
+  --dark-gray-100: hsl(236, 33%, 92%);
+  --dark-gray-200: hsl(234, 39%, 85%);
+  --dark-gray-300: hsl(234, 11%, 52%);
+  --dark-gray-400: hsl(233, 14%, 35%);
+  --dark-gray-500: hsl(237, 14%, 26%);
+  --dark-gray-600: hsl(235, 24%, 19%);
+  --dark-gray-700: hsl(235, 21%, 11%);
+}
+
+html {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  transition: all 0.3s;
+}
+
+/* if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+
+// Whenever the user explicitly chooses light mode
+localStorage.theme = 'light'
+
+// Whenever the user explicitly chooses dark mode
+localStorage.theme = 'dark'
+
+// Whenever the user explicitly chooses to respect the OS preference
+localStorage.removeItem('theme') */
