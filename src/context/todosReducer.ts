@@ -2,6 +2,7 @@ type Todo = {
   id: number;
   text: string;
   checked: boolean;
+  createdAt: string;
 };
 
 export function reducer(
@@ -12,16 +13,20 @@ export function reducer(
     case "todo/add":
       return [...state, action.payload];
     case "todo/delete": {
+      //payload = todo id
       const todos = [...state];
       const targetIndex = todos.findIndex((todo) => todo.id === action.payload);
       todos.splice(targetIndex, 1);
       return [...todos];
     }
     case "todo/toggle": {
+      //payload = todo id
       const todos = [...state];
-      const targetIndex = todos.findIndex((todo) => todo.id === action.payload);
-      todos[targetIndex].checked = !todos[targetIndex].checked;
-      return [...todos];
+      const targetIndex = todos.findIndex(
+        (todo) => todo.id === action.payload.tId,
+      );
+      todos[targetIndex].checked = action.payload.status;
+      return todos;
     }
     case "todo/deleteComplete": {
       const todos = [...state];

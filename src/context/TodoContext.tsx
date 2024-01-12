@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { reducer } from "./todosReducer";
 
 interface Props {
@@ -9,6 +9,7 @@ type Todo = {
   id: number;
   text: string;
   checked: boolean;
+  createdAt: string;
 };
 
 const TodoContext = createContext<{
@@ -23,6 +24,12 @@ function TodoProvider({ children }: Props) {
       {children}
     </TodoContext.Provider>
   );
+}
+
+export function useTodos() {
+  const context = useContext(TodoContext);
+  const { todos, dispatch } = context || {};
+  return { todos, dispatch };
 }
 
 export default TodoProvider;

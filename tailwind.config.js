@@ -4,11 +4,9 @@ export default {
   theme: {
     container: {
       center: true,
-      // padding: {
-      //   DEFAULT: "3rem",
-      //   sm: "2rem",
-      //   md: "7rem",
-      // },
+      padding: {
+        DEFAULT: "1rem",
+      },
       screens: {
         sm: "640px",
         md: "768px",
@@ -21,12 +19,16 @@ export default {
       backgroundImage: {
         "check-background":
           "linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))",
+
         "desk-dark": "url('assets/bg-desktop-dark.jpg')",
         "desk-lign": "url('assets/bg-desktop-ligh.jpg')",
         "mobile-dark": "url('assets/bg-mobile-dark.jpg')",
         "mobile-light": "url('assets/bg-mobile-light.jpg')",
+
         "icon-light": "url('assets/icon-moon.svg')",
         "icon-dark": "url('assets/icon-sun.svg')",
+        "icon-check": "url('assets/icon-check.svg')",
+        "icon-cross": "url('assets/icon-cross.svg')",
       },
     },
   },
