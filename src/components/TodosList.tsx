@@ -32,19 +32,30 @@ function TodosList() {
   if (todos.length == 0) return <EmptyList />;
   return (
     <main className="mt-5 overflow-hidden rounded-md shadow-2xl">
-      <section className=" divide-y divide-gray-700 ">
+      <section className="bp:max-h-[509px] max-h-[275px] divide-y divide-gray-700 overflow-y-auto">
         {filteredTodos.length > 0 ? (
           filteredTodos.map((todo) => <Todo key={todo.id} todo={todo} />)
         ) : (
-          <TodoStyle className="justify-center py-5">
-            <h1>there are no {filter} todos !</h1>
+          <TodoStyle className="justify-center ">
+            <h3 className="bp:text-base text-sm normal-case">
+              There are no {filter} todos !
+            </h3>
           </TodoStyle>
         )}
       </section>
-      <TodoStyle className="items-center justify-between  border-t border-gray-700 px-6 py-5 text-gray-500">
+
+      <TodoStyle className="items-center justify-between  rounded-bl-md rounded-br-md border-t border-gray-700  text-gray-500">
         <TodosLeft todos={todos} />
-        <TodosFilter className="" setFilter={setFilter} filter={filter} />
+        <TodosFilter
+          className="bp:flex hidden"
+          setFilter={setFilter}
+          filter={filter}
+        />
         <ClearCompleted />
+      </TodoStyle>
+      {/* small screen */}
+      <TodoStyle className="bp:hidden mt-5 flex justify-center rounded-md py-3 text-gray-500">
+        <TodosFilter className="" setFilter={setFilter} filter={filter} />
       </TodoStyle>
     </main>
   );

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import TodoStyle from "./TodoStyle";
 import { useTodos } from "../context/TodoContext";
+import Checkbox from "./Checkbox";
 
 function CreateTodo() {
   const [value, setVlaue] = useState("");
@@ -20,13 +21,13 @@ function CreateTodo() {
   }
 
   return (
-    <TodoStyle className="mt-10 rounded-md px-6 py-5 shadow-2xl ">
-      <button
-        onClick={handleAdd}
-        className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-700 text-3xl text-gray-300 hover:bg-check-background hover:text-white"
+    <TodoStyle className="mt-10 rounded-md shadow-2xl ">
+      <Checkbox
+        handler={handleAdd}
+        className="hover:border-blue-400 hover:text-blue-200"
       >
         +
-      </button>
+      </Checkbox>
       <input
         autoFocus
         type="text"
@@ -36,7 +37,7 @@ function CreateTodo() {
         onChange={(e) => setVlaue(e.target.value)}
         value={value}
         placeholder="Create a new todo..."
-        className="grow bg-transparent px-2 text-lg  text-gray-300 caret-[var(--color-bright-blue)] placeholder:text-[var(--dark-gray-300)] focus:outline-none"
+        className="bp:text-base grow bg-transparent px-2 text-sm  text-gray-300 caret-[var(--color-bright-blue)] placeholder:text-[var(--dark-gray-300)] focus:outline-none"
       />
     </TodoStyle>
   );

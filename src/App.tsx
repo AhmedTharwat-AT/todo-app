@@ -10,7 +10,7 @@ function App() {
             <AppLayout />
           </TodoProvider>
         </div>
-        <p className="mb-6 mt-auto text-center text-gray-600">
+        <p className="mb-6 mt-auto pt-4 text-center text-gray-600">
           Drag and drop to reorder list
         </p>
       </div>

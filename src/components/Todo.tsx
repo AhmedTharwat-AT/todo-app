@@ -1,4 +1,5 @@
 import { useTodos } from "../context/TodoContext";
+import Checkbox from "./Checkbox";
 import TodoStyle from "./TodoStyle";
 type Todo = {
   id: number;
@@ -26,29 +27,31 @@ function Todo({ todo }: { todo: Todo }) {
 
   return (
     <TodoStyle key={todo.id} className="group items-center px-6  py-4">
-      <div
-        onClick={handleToggle}
-        className={`${
+      <Checkbox
+        handler={handleToggle}
+        className={
           todo.checked ? "bg-check-background" : "hover:border-blue-400"
-        } flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-gray-700 text-3xl text-gray-300 transition-all hover:text-white`}
+        }
       >
         <span
           className={`${
             todo.checked ? "bg-icon-check" : ""
-          } h-3 w-3 bg-contain bg-no-repeat text-white`}
+          } h-3 w-3  bg-contain bg-no-repeat text-white`}
         ></span>
-      </div>
+      </Checkbox>
 
       <div className="flex w-full items-center justify-between">
         <div className="px-2">
-          <div
+          <h3
             className={`${
               todo.checked ? "text-gray-500 line-through" : ""
-            } hyphens-auto break-all`}
+            } bp:text-base hyphens-auto break-all text-sm`}
           >
             {todo.text}
-          </div>
-          <p className="text-sm lowercase text-gray-500">{todo.createdAt}</p>
+          </h3>
+          <p className="bp:text-sm text-xs lowercase text-gray-500">
+            {todo.createdAt}
+          </p>
         </div>
 
         <div

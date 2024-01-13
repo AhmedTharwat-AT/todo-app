@@ -16,6 +16,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        bp: "542px",
+      },
       backgroundImage: {
         "check-background":
           "linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))",

@@ -6,7 +6,7 @@ type Props = {
 function TodoStyle({ children, className = "" }: Props) {
   return (
     <div
-      className={`${className} flex  gap-4 bg-[var(--dark-gray-600)] capitalize tracking-wider text-[var(--dark-gray-200)]`}
+      className={` bp:px-6 bp:py-5 flex  gap-4 bg-[var(--dark-gray-600)] px-5 py-4 capitalize tracking-wider text-[var(--dark-gray-200)] ${className}`}
     >
       {children}
     </div>

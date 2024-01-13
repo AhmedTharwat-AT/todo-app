@@ -8,7 +8,10 @@ function ClearCompleted() {
   }
 
   return (
-    <button onClick={handleClearCompleted} className="text-sm hover:underline">
+    <button
+      onClick={handleClearCompleted}
+      className="bp:text-sm text-xs tracking-wide hover:underline"
+    >
       Clear Completed
     </button>
   );

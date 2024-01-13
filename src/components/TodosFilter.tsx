@@ -8,7 +8,7 @@ function TodosFilter({
   className?: string;
 }) {
   return (
-    <ul className={`${className} flex gap-5`}>
+    <ul className={`${className} bp:text-base flex gap-5 text-sm`}>
       <li
         className={`${
           filter == "all" ? "text-blue-400" : ""
