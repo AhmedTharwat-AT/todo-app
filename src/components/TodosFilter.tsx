@@ -12,25 +12,25 @@ function TodosFilter({
       className={`${className} bp:text-base flex gap-5 text-sm font-semibold`}
     >
       <li
-        className={`${
-          filter == "all" ? "text-blue-500 dark:text-blue-400" : ""
-        } cursor-pointer hover:underline`}
+        className={`text-gray-500 ${
+          filter == "all" ? "!text-blue-500 dark:text-blue-400" : ""
+        } cursor-pointer  hover:underline`}
         onClick={() => setFilter("all")}
       >
         All
       </li>
       <li
-        className={`${
-          filter == "active" ? "text-blue-500 dark:text-blue-400" : ""
-        } cursor-pointer hover:underline`}
+        className={`text-gray-500 ${
+          filter == "active" ? "!text-blue-500 dark:text-blue-400" : ""
+        } cursor-pointer  hover:underline`}
         onClick={() => setFilter("active")}
       >
         Active
       </li>
       <li
-        className={`${
-          filter == "completed" ? "text-blue-500 dark:text-blue-400" : ""
-        } cursor-pointer hover:underline`}
+        className={`text-gray-500 ${
+          filter == "completed" ? "!text-blue-500 dark:text-blue-400" : ""
+        } cursor-pointer  hover:underline`}
         onClick={() => setFilter("completed")}
       >
         Completed

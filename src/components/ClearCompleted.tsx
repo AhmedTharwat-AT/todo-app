@@ -10,7 +10,7 @@ function ClearCompleted() {
   return (
     <button
       onClick={handleClearCompleted}
-      className="bp:text-sm text-xs tracking-wide text-gray-400 hover:underline  dark:text-gray-500"
+      className="bp:text-sm text-xs tracking-wide text-gray-500 hover:underline  dark:text-gray-400"
     >
       Clear Completed
     </button>

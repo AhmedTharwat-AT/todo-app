@@ -37,10 +37,10 @@ function TodosList() {
         {filteredTodos.length > 0 ? (
           filteredTodos.map((todo) => <Todo key={todo.id} todo={todo} />)
         ) : (
-          <TodoStyle className="justify-center ">
+          <TodoStyle className="bp:py-9 justify-center py-7">
             <h3
               onClick={() => dispatch({ type: "todo/test" })}
-              className="bp:text-base text-sm normal-case"
+              className="bp:text-base text-sm normal-case text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)]"
             >
               There are no {filter} todos !
             </h3>
@@ -59,7 +59,7 @@ function TodosList() {
       </TodoStyle>
 
       {/* small screen */}
-      <TodoStyle className="bp:hidden mt-5 flex justify-center rounded-md py-3 text-gray-500 shadow-2xl">
+      <TodoStyle className="bp:hidden mt-5 flex justify-center rounded-md py-3  shadow-2xl">
         <TodosFilter className="" setFilter={setFilter} filter={filter} />
       </TodoStyle>
     </main>
