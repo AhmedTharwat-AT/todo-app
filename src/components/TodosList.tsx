@@ -31,8 +31,8 @@ function TodosList() {
 
   if (todos.length == 0) return <EmptyList />;
   return (
-    <main className="mt-5 overflow-hidden rounded-md shadow-2xl">
-      <section className="bp:max-h-[509px] max-h-[275px] divide-y divide-gray-700 overflow-y-auto">
+    <main className="mt-5 overflow-hidden rounded-md ">
+      <section className="bp:max-h-[509px] max-h-[275px] divide-y divide-gray-300 overflow-y-auto shadow-2xl dark:divide-gray-700">
         {filteredTodos.length > 0 ? (
           filteredTodos.map((todo) => <Todo key={todo.id} todo={todo} />)
         ) : (
@@ -44,17 +44,18 @@ function TodosList() {
         )}
       </section>
 
-      <TodoStyle className="items-center justify-between  rounded-bl-md rounded-br-md border-t border-gray-700  text-gray-500">
+      <TodoStyle className="items-center justify-between rounded-bl-md  rounded-br-md border-t border-gray-300 text-gray-400 dark:border-gray-700  dark:text-gray-500">
         <TodosLeft todos={todos} />
         <TodosFilter
-          className="bp:flex hidden"
+          className="bp:flex hidden text-gray-500"
           setFilter={setFilter}
           filter={filter}
         />
         <ClearCompleted />
       </TodoStyle>
+
       {/* small screen */}
-      <TodoStyle className="bp:hidden mt-5 flex justify-center rounded-md py-3 text-gray-500">
+      <TodoStyle className="bp:hidden mt-5 flex justify-center rounded-md py-3 text-gray-500 shadow-2xl">
         <TodosFilter className="" setFilter={setFilter} filter={filter} />
       </TodoStyle>
     </main>

@@ -44,7 +44,9 @@ function Todo({ todo }: { todo: Todo }) {
         <div className="px-2">
           <h3
             className={`${
-              todo.checked ? "text-gray-500 line-through" : ""
+              todo.checked
+                ? "text-gray-400 line-through  dark:text-gray-500"
+                : ""
             } bp:text-base hyphens-auto break-all text-sm`}
           >
             {todo.text}

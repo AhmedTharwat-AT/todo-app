@@ -8,7 +8,7 @@ function TodosLeft({ todos }: { todos: Todo[] }) {
         ? activeTodos == 1
           ? `1 item left`
           : `${activeTodos} items left`
-        : "all completed 🎉"}
+        : "all completed"}
     </p>
   );
 }

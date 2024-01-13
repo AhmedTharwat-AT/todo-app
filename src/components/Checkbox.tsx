@@ -11,7 +11,7 @@ function Checkbox({ children, handler, className }: Props) {
   return (
     <button
       onClick={handler}
-      className={`${className} bp:h-7 bp:w-7 flex h-6 w-6 items-center justify-center rounded-full border border-gray-700 text-3xl text-gray-300 transition-all`}
+      className={`${className} bp:h-7 bp:w-7 flex h-6 w-6 items-center justify-center rounded-full border  border-gray-300 text-3xl text-gray-300 transition-all dark:border-gray-700`}
     >
       {children}
     </button>

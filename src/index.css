@@ -24,6 +24,7 @@
   --light-gray-300: hsl(233, 11%, 84%);
   --light-gray-400: hsl(236, 9%, 61%);
   --light-gray-500: hsl(235, 19%, 35%);
+  --light-gray-600: hsl(235, 24%, 19%);
 
   /* Dark them */
 
@@ -40,6 +41,12 @@ html {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
   transition: all 0.3s;
+}
+
+*,
+*::after,
+*::before {
+  @apply transition-all duration-300;
 }
 
 /* if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

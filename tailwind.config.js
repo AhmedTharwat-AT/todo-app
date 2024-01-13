@@ -24,7 +24,7 @@ export default {
           "linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))",
 
         "desk-dark": "url('assets/bg-desktop-dark.jpg')",
-        "desk-lign": "url('assets/bg-desktop-ligh.jpg')",
+        "desk-light": "url('assets/bg-desktop-light.jpg')",
         "mobile-dark": "url('assets/bg-mobile-dark.jpg')",
         "mobile-light": "url('assets/bg-mobile-light.jpg')",
 

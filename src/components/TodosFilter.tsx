@@ -8,10 +8,12 @@ function TodosFilter({
   className?: string;
 }) {
   return (
-    <ul className={`${className} bp:text-base flex gap-5 text-sm`}>
+    <ul
+      className={`${className} bp:text-base flex gap-5 text-sm font-semibold`}
+    >
       <li
         className={`${
-          filter == "all" ? "text-blue-400" : ""
+          filter == "all" ? "text-blue-500 dark:text-blue-400" : ""
         } cursor-pointer hover:underline`}
         onClick={() => setFilter("all")}
       >
@@ -19,7 +21,7 @@ function TodosFilter({
       </li>
       <li
         className={`${
-          filter == "active" ? "text-blue-400" : ""
+          filter == "active" ? "text-blue-500 dark:text-blue-400" : ""
         } cursor-pointer hover:underline`}
         onClick={() => setFilter("active")}
       >
@@ -27,7 +29,7 @@ function TodosFilter({
       </li>
       <li
         className={`${
-          filter == "completed" ? "text-blue-400" : ""
+          filter == "completed" ? "text-blue-500 dark:text-blue-400" : ""
         } cursor-pointer hover:underline`}
         onClick={() => setFilter("completed")}
       >

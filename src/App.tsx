@@ -4,7 +4,7 @@ import TodoProvider from "./context/TodoContext";
 function App() {
   return (
     <div>
-      <div className="relative flex min-h-screen w-full flex-col bg-[var(--dark-gray-700)] bg-mobile-dark bg-[length:100%_35%] bg-no-repeat sm:bg-desk-dark">
+      <div className="relative flex min-h-screen w-full flex-col bg-[var(--light-gray-200)] bg-mobile-light bg-[length:100%_35%] bg-no-repeat dark:bg-[var(--dark-gray-700)] dark:bg-mobile-dark sm:bg-desk-lign dark:sm:bg-desk-dark">
         <div className="container">
           <TodoProvider>
             <AppLayout />
