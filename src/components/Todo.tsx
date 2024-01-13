@@ -41,7 +41,11 @@ function Todo({ todo }: { todo: Todo }) {
 
       <div className="flex w-full items-center justify-between">
         <div className="px-2">
-          <div className={todo.checked ? "text-gray-500 line-through" : ""}>
+          <div
+            className={`${
+              todo.checked ? "text-gray-500 line-through" : ""
+            } hyphens-auto break-all`}
+          >
             {todo.text}
           </div>
           <p className="text-sm lowercase text-gray-500">{todo.createdAt}</p>
@@ -49,7 +53,7 @@ function Todo({ todo }: { todo: Todo }) {
 
         <div
           onClick={handleDelete}
-          className="group-hover:bg-icon-cross h-5 w-5 cursor-pointer  bg-contain bg-no-repeat opacity-0 transition-all group-hover:opacity-100"
+          className="h-5 w-5 min-w-[20px] cursor-pointer bg-contain bg-no-repeat opacity-0 transition-all group-hover:bg-icon-cross group-hover:opacity-100"
         ></div>
       </div>
     </TodoStyle>

@@ -4,7 +4,7 @@ import TodosList from "./TodosList";
 
 function AppLayout() {
   return (
-    <div className="pt-20">
+    <div className="mx-auto pt-20 md:max-w-[690px]">
       <Header />
       <CreateTodo />
       <TodosList />

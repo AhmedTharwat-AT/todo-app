@@ -1,20 +1,17 @@
 import { createContext, useContext, useReducer } from "react";
 import { reducer } from "./todosReducer";
+import { Todo } from "../ts/types";
 
 interface Props {
   children: JSX.Element | JSX.Element[] | string | number;
 }
 
-type Todo = {
-  id: number;
-  text: string;
-  checked: boolean;
-  createdAt: string;
-};
-
 const TodoContext = createContext<{
   todos: Todo[];
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<{
+    type: string;
+    payload?: any;
+  }>;
 }>({ todos: [], dispatch: () => null });
 
 function TodoProvider({ children }: Props) {

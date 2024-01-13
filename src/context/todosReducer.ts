@@ -1,9 +1,4 @@
-type Todo = {
-  id: number;
-  text: string;
-  checked: boolean;
-  createdAt: string;
-};
+import { Todo } from "../ts/types";
 
 export function reducer(
   state: Todo[],
@@ -33,6 +28,7 @@ export function reducer(
       const newTodos = todos.filter((todo) => !todo.checked);
       return [...newTodos];
     }
+
     default:
       return [...state];
   }
