@@ -30,7 +30,7 @@ function Todo({ todo }: { todo: Todo }) {
       <Checkbox
         handler={handleToggle}
         className={
-          todo.checked ? "bg-check-background" : "hover:border-blue-400"
+          todo.checked ? "bg-check-background" : "hover:border-blue-500"
         }
       >
         <span
@@ -47,7 +47,7 @@ function Todo({ todo }: { todo: Todo }) {
               todo.checked
                 ? "text-gray-400 line-through  dark:text-gray-500"
                 : ""
-            } bp:text-base hyphens-auto break-all text-sm`}
+            } bp:text-base hyphens-auto break-all text-sm text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)]`}
           >
             {todo.text}
           </h3>
@@ -58,7 +58,7 @@ function Todo({ todo }: { todo: Todo }) {
 
         <div
           onClick={handleDelete}
-          className="h-5 w-5 min-w-[20px] cursor-pointer bg-contain bg-no-repeat opacity-0 transition-all group-hover:bg-icon-cross group-hover:opacity-100"
+          className="h-5 w-5 min-w-[20px] cursor-pointer bg-contain bg-no-repeat opacity-0 duration-500 group-hover:bg-icon-cross group-hover:opacity-100"
         ></div>
       </div>
     </TodoStyle>

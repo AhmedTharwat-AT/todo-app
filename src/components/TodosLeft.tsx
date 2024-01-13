@@ -3,7 +3,7 @@ import { Todo } from "../ts/types";
 function TodosLeft({ todos }: { todos: Todo[] }) {
   const activeTodos = todos.filter((todo) => !todo.checked).length;
   return (
-    <p className="bp:text-sm text-xs">
+    <p className="bp:text-sm text-xs text-gray-400  dark:text-gray-500">
       {activeTodos > 0
         ? activeTodos == 1
           ? `1 item left`

@@ -10,7 +10,7 @@ import { Todo as TodoType } from "../ts/types";
 import ClearCompleted from "./ClearCompleted";
 
 function TodosList() {
-  const { todos } = useTodos();
+  const { todos, dispatch } = useTodos();
   const [filter, setFilter] = useState("all");
   let filteredTodos: TodoType[] = [];
 
@@ -30,6 +30,7 @@ function TodosList() {
   }
 
   if (todos.length == 0) return <EmptyList />;
+
   return (
     <main className="mt-5 overflow-hidden rounded-md ">
       <section className="bp:max-h-[509px] max-h-[275px] divide-y divide-gray-300 overflow-y-auto shadow-2xl dark:divide-gray-700">
@@ -37,14 +38,17 @@ function TodosList() {
           filteredTodos.map((todo) => <Todo key={todo.id} todo={todo} />)
         ) : (
           <TodoStyle className="justify-center ">
-            <h3 className="bp:text-base text-sm normal-case">
+            <h3
+              onClick={() => dispatch({ type: "todo/test" })}
+              className="bp:text-base text-sm normal-case"
+            >
               There are no {filter} todos !
             </h3>
           </TodoStyle>
         )}
       </section>
 
-      <TodoStyle className="items-center justify-between rounded-bl-md  rounded-br-md border-t border-gray-300 text-gray-400 dark:border-gray-700  dark:text-gray-500">
+      <TodoStyle className="items-center justify-between rounded-bl-md  rounded-br-md border-t border-gray-300  dark:border-gray-700 ">
         <TodosLeft todos={todos} />
         <TodosFilter
           className="bp:flex hidden text-gray-500"

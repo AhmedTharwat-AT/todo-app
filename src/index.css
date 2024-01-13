@@ -40,13 +40,13 @@
 html {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
-  transition: all 0.3s;
+  transition: all 0.3s 0s linear;
 }
 
 *,
 *::after,
 *::before {
-  @apply transition-all duration-300;
+  @apply transition-all duration-300 focus:outline-none;
 }
 
 /* if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

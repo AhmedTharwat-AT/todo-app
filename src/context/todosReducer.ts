@@ -5,6 +5,8 @@ export function reducer(
   action: { type: string; payload?: any },
 ) {
   switch (action.type) {
+    case "todo/init":
+      return [...action.payload];
     case "todo/add":
       return [...state, action.payload];
     case "todo/delete": {
@@ -28,7 +30,6 @@ export function reducer(
       const newTodos = todos.filter((todo) => !todo.checked);
       return [...newTodos];
     }
-
     default:
       return [...state];
   }

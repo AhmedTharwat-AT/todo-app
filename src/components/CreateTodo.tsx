@@ -16,6 +16,7 @@ function CreateTodo() {
       checked: false,
       createdAt: new Date().toDateString(),
     };
+
     dispatch({ type: "todo/add", payload: todo });
     setVlaue("");
   }
