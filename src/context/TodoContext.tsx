@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 import { reducer } from "./todosReducer";
-import { Todo } from "../ts/types";
+import { Todo } from "../types/App.types";
 
 interface Props {
   children: JSX.Element | JSX.Element[] | string | number;

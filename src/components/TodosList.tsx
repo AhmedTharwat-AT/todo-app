@@ -6,7 +6,7 @@ import TodoStyle from "./TodoStyle";
 import TodosFilter from "./TodosFilter";
 import TodosLeft from "./TodosLeft";
 
-import { Todo as TodoType } from "../ts/types";
+import { Todo as TodoType } from "../types/App.types";
 import ClearCompleted from "./ClearCompleted";
 
 function TodosList() {
@@ -33,14 +33,14 @@ function TodosList() {
 
   return (
     <main className="mt-5 overflow-hidden rounded-md ">
-      <section className="bp:max-h-[509px] max-h-[275px] divide-y divide-gray-300 overflow-y-auto shadow-2xl dark:divide-gray-700">
+      <section className="max-h-[275px] divide-y divide-gray-300 overflow-y-auto shadow-2xl dark:divide-gray-700 bp:max-h-[509px]">
         {filteredTodos.length > 0 ? (
           filteredTodos.map((todo) => <Todo key={todo.id} todo={todo} />)
         ) : (
-          <TodoStyle className="bp:py-9 justify-center py-7">
+          <TodoStyle className="justify-center py-7 bp:py-9">
             <h3
               onClick={() => dispatch({ type: "todo/test" })}
-              className="bp:text-base text-sm normal-case text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)]"
+              className="text-sm normal-case text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)] bp:text-base"
             >
               There are no {filter} todos !
             </h3>
@@ -51,7 +51,7 @@ function TodosList() {
       <TodoStyle className="items-center justify-between rounded-bl-md  rounded-br-md border-t border-gray-300  dark:border-gray-700 ">
         <TodosLeft todos={todos} />
         <TodosFilter
-          className="bp:flex hidden text-gray-500"
+          className="hidden text-gray-500 bp:flex"
           setFilter={setFilter}
           filter={filter}
         />
@@ -59,7 +59,7 @@ function TodosList() {
       </TodoStyle>
 
       {/* small screen */}
-      <TodoStyle className="bp:hidden mt-5 flex justify-center rounded-md py-3  shadow-2xl">
+      <TodoStyle className="mt-5 flex justify-center rounded-md py-3 shadow-2xl  bp:hidden">
         <TodosFilter className="" setFilter={setFilter} filter={filter} />
       </TodoStyle>
     </main>

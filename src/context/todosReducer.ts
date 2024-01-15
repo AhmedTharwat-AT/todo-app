@@ -1,4 +1,4 @@
-import { Todo } from "../ts/types";
+import { Todo } from "../types/App.types";
 
 export function reducer(
   state: Todo[],
