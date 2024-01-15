@@ -26,7 +26,11 @@ function Todo({ todo }: { todo: Todo }) {
   }
 
   return (
-    <TodoStyle key={todo.id} className="group items-center px-6  py-4">
+    <TodoStyle
+      draggable
+      key={todo.id}
+      className="group items-center px-6  py-4"
+    >
       <Checkbox
         handler={handleToggle}
         className={
@@ -47,11 +51,11 @@ function Todo({ todo }: { todo: Todo }) {
               todo.checked
                 ? "text-gray-400 line-through  dark:text-gray-500"
                 : ""
-            } bp:text-base hyphens-auto break-all text-sm text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)]`}
+            } hyphens-auto break-all text-sm text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)] bp:text-base`}
           >
             {todo.text}
           </h3>
-          <p className="bp:text-sm text-xs lowercase text-gray-500">
+          <p className="text-xs lowercase text-gray-500 bp:text-sm">
             {todo.createdAt}
           </p>
         </div>

@@ -10,7 +10,7 @@ import { Todo as TodoType } from "../types/App.types";
 import ClearCompleted from "./ClearCompleted";
 
 function TodosList() {
-  const { todos, dispatch } = useTodos();
+  const { todos } = useTodos();
   const [filter, setFilter] = useState("all");
   let filteredTodos: TodoType[] = [];
 
@@ -29,7 +29,8 @@ function TodosList() {
     }
   }
 
-  if (todos.length == 0) return <EmptyList />;
+  if (todos.length == 0)
+    return <EmptyList className="mt-5" msg="Add todos to your list !" />;
 
   return (
     <main className="mt-5 overflow-hidden rounded-md ">
@@ -37,14 +38,7 @@ function TodosList() {
         {filteredTodos.length > 0 ? (
           filteredTodos.map((todo) => <Todo key={todo.id} todo={todo} />)
         ) : (
-          <TodoStyle className="justify-center py-7 bp:py-9">
-            <h3
-              onClick={() => dispatch({ type: "todo/test" })}
-              className="text-sm normal-case text-[var(--light-gray-600)] dark:text-[var(--dark-gray-200)] bp:text-base"
-            >
-              There are no {filter} todos !
-            </h3>
-          </TodoStyle>
+          <EmptyList msg={` There are no ${filter} todos !`} />
         )}
       </section>
 
