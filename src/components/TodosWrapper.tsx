@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTodos } from "../context/TodoContext";
+import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
 import EmptyList from "./EmptyList";
-import Todo from "./Todo";
 import TodoStyle from "./TodoStyle";
 import TodosFilter from "./TodosFilter";
 import TodosLeft from "./TodosLeft";
@@ -12,7 +12,7 @@ import ClearCompleted from "./ClearCompleted";
 import TodosList from "./TodosList";
 
 function TodosWrapper() {
-  const { todos } = useTodos();
+  const { todos, dispatch } = useTodos();
   const [filter, setFilter] = useState("all");
   let filteredTodos: TodoType[] = [];
 
@@ -31,6 +31,19 @@ function TodosWrapper() {
     }
   }
 
+  function handleDragEnd(result: DropResult) {
+    const source = result.source.index;
+    const destination = result.destination?.index;
+    if (destination == undefined || source == destination) return;
+    console.log(source, destination);
+
+    const newOrder = Array.from(todos);
+    const [removed] = newOrder.splice(source, 1);
+    newOrder.splice(destination, 0, removed);
+
+    dispatch({ type: "todo/init", payload: newOrder });
+  }
+
   if (todos.length == 0)
     return (
       <EmptyList className="mt-5 rounded-md " msg="Add todos to your list !" />
@@ -39,7 +52,9 @@ function TodosWrapper() {
   return (
     <main className="mt-5 overflow-hidden rounded-md ">
       {filteredTodos.length > 0 ? (
-        <TodosList filteredTodos={filteredTodos} />
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <TodosList filteredTodos={filteredTodos} filter={filter} />
+        </DragDropContext>
       ) : (
         <EmptyList msg={` There are no ${filter} todos !`} />
       )}

@@ -1,6 +1,8 @@
 import { useTodos } from "../context/TodoContext";
+
 import Checkbox from "./Checkbox";
 import TodoStyle from "./TodoStyle";
+
 type Todo = {
   id: number;
   text: string;
@@ -8,7 +10,12 @@ type Todo = {
   createdAt: string;
 };
 
-function Todo({ todo }: { todo: Todo }) {
+interface Props {
+  todo: Todo;
+  isDragging: boolean;
+}
+
+const Todo = ({ todo, isDragging }: Props) => {
   const { dispatch } = useTodos();
 
   function handleToggle() {
@@ -27,9 +34,12 @@ function Todo({ todo }: { todo: Todo }) {
 
   return (
     <TodoStyle
-      draggable
       key={todo.id}
-      className="group items-center px-6  py-4"
+      className={`${
+        isDragging
+          ? "rounded-md border border-blue-400 opacity-90 dark:border-blue-700"
+          : " opacity-100 "
+      } group items-center px-6  py-4`}
     >
       <Checkbox
         handler={handleToggle}
@@ -67,6 +77,5 @@ function Todo({ todo }: { todo: Todo }) {
       </div>
     </TodoStyle>
   );
-}
-
+};
 export default Todo;
