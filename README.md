@@ -10,6 +10,11 @@ A simple todo-app that allow users to add and keep their todos safe and organize
 * Users can change the order of the todos list by dragging and dropping a todo item in a different place.
 * Users can change the app theme to light or dark mode , its sat initially to the user preferred mode.
 
+
+ > [Live Preview](https://todo-app-project-web.netlify.app/)
+  
+
+
 ## Screenshots
 ![todo-light-desk](https://github.com/AhmedTharwat-AT/todo-app/assets/89677139/38f2c36a-7bf7-4076-87bd-58c38539185a)
 ![todo-dark-desk](https://github.com/AhmedTharwat-AT/todo-app/assets/89677139/37169053-7bc3-4e29-9d03-36586edd8180)
