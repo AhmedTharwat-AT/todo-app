@@ -4,7 +4,7 @@ A simple todo-app that allow users to add and keep their todos safe and organize
 
 ## Features and Tools
 
-* This app was implemented using typescript and context api + useReducer hook for todos state .
+* This app was implemented using Reactjs, Typescript and context api + useReducer hook for todos state .
 * The user todos list is saved in the localStorage for presisting state between page reload or when revisiting the webpage again.
 * Users can filter todos based on its activity.
 * Users can change the order of the todos list by dragging and dropping a todo item in a different place.
