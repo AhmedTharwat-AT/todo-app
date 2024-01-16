@@ -35,7 +35,6 @@ function TodosWrapper() {
     const source = result.source.index;
     const destination = result.destination?.index;
     if (destination == undefined || source == destination) return;
-    console.log(source, destination);
 
     const newOrder = Array.from(todos);
     const [removed] = newOrder.splice(source, 1);
