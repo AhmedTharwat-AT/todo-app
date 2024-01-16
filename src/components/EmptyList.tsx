@@ -11,7 +11,7 @@ function EmptyList({
     <TodoStyle
       className={`${className} justify-center rounded-tl-md rounded-tr-md py-5`}
     >
-      <h1 className="normal-case">{msg}</h1>
+      <h1 className="text-sm normal-case bp:text-base">{msg}</h1>
     </TodoStyle>
   );
 }
