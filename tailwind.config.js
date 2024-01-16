@@ -20,15 +20,15 @@ export default {
         "check-background":
           "linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))",
 
-        "desk-dark": "url('./assets/bg-desktop-dark.jpg')",
-        "desk-light": "url('./assets/bg-desktop-light.jpg')",
-        "mobile-dark": "url('./assets/bg-mobile-dark.jpg')",
-        "mobile-light": "url('./assets/bg-mobile-light.jpg')",
+        "desk-dark": "url('/assets/bg-desktop-dark.jpg')",
+        "desk-light": "url('/assets/bg-desktop-light.jpg')",
+        "mobile-dark": "url('/assets/bg-mobile-dark.jpg')",
+        "mobile-light": "url('/assets/bg-mobile-light.jpg')",
 
-        "icon-light": "url('./assets/icon-moon.svg')",
-        "icon-dark": "url('./assets/icon-sun.svg')",
-        "icon-check": "url('./assets/icon-check.svg')",
-        "icon-cross": "url('./assets/icon-cross.svg')",
+        "icon-light": "url('/assets/icon-moon.svg')",
+        "icon-dark": "url('/assets/icon-sun.svg')",
+        "icon-check": "url('/assets/icon-check.svg')",
+        "icon-cross": "url('/assets/icon-cross.svg')",
       },
     },
   },
