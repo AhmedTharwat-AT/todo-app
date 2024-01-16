@@ -8,7 +8,9 @@ function EmptyList({
   className?: string;
 }) {
   return (
-    <TodoStyle className={`${className} justify-center rounded-md py-5`}>
+    <TodoStyle
+      className={`${className} justify-center rounded-tl-md rounded-tr-md py-5`}
+    >
       <h1 className="normal-case">{msg}</h1>
     </TodoStyle>
   );
