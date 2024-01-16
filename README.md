@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple todo-app that allow users to add and keep their todos safe and organized in one place . The app design is from [frontend-mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) .
 
-Currently, two official plugins are available:
+## Features and Tools
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* This app was implemented using typescript and context api + useReducer hook for todos state .
+* The user todos list is saved in the localStorage for presisting state between page reload or when revisiting the webpage again.
+* Users can filter todos based on its activity.
+* Users can change the order of the todos list by dragging and dropping a todo item in a different place.
+* Users can change the app theme to light or dark mode , its sat initially to the user preferred mode.
 
-## Expanding the ESLint configuration
+## Screenshots
+![todo-light-desk](https://github.com/AhmedTharwat-AT/todo-app/assets/89677139/38f2c36a-7bf7-4076-87bd-58c38539185a)
+![todo-dark-desk](https://github.com/AhmedTharwat-AT/todo-app/assets/89677139/37169053-7bc3-4e29-9d03-36586edd8180)
+![todo-light-mobile](https://github.com/AhmedTharwat-AT/todo-app/assets/89677139/b4e4a877-9466-4185-b81f-6813e3faade3)
+![todo-dark-mobile](https://github.com/AhmedTharwat-AT/todo-app/assets/89677139/c4021fa8-80f3-4dc7-9580-b17f8c5de060)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
